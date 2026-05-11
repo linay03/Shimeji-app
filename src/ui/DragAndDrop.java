@@ -5,11 +5,11 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
-import java.awt.event.MouseMotionListener;
 
-public class DragAndDrop {
+public class DragAndDrop extends Action {
 
     public DragAndDrop(ShimejiWindow shimejiWindow) {
+        super(null, 0, 0);
         enableDragAndDrop(shimejiWindow);
     }
 
@@ -34,5 +34,10 @@ public class DragAndDrop {
                 shimejiWindow.setLocation(newLocation);
             }
         });
+    }
+
+    @Override
+    public void update() {
+
     }
 }
