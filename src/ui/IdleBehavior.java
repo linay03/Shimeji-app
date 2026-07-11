@@ -6,6 +6,7 @@ public class IdleBehavior extends Behavior{
 
     public IdleBehavior(Shimeji shimeji) {
         super(shimeji);
+        initIdle();
     }
 
     @Override
@@ -15,6 +16,10 @@ public class IdleBehavior extends Behavior{
 
     @Override
     public void update() {
+    }
 
+    private void initIdle() {
+        this.shimeji.setX(500);
+        this.shimeji.setY(500);
     }
 }

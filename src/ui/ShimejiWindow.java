@@ -29,10 +29,12 @@ public class ShimejiWindow extends JWindow {
         WalkBehavior walkBehavior = new WalkBehavior(this.shimeji, 16);
         currentBehavior = walkBehavior;
 
-        Timer timer = new Timer(3000, e -> {
+        Timer timer = new Timer(300, e -> {
             currentBehavior.update();
             setLocation(this.shimeji.getX(), this.shimeji.getY());
-
+            if (currentBehavior.isFinished()) {
+                currentBehavior = getRandomBehavior();
+            }
         });
 
         timer.start();
@@ -40,5 +42,9 @@ public class ShimejiWindow extends JWindow {
 
     public JLabel getSpriteLabel() {
         return spriteLabel;
+    }
+
+    public Behavior getRandomBehavior() {
+        return new IdleBehavior(this.shimeji);
     }
 }
