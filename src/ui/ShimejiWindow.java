@@ -32,6 +32,7 @@ public class ShimejiWindow extends JWindow {
         Timer timer = new Timer(300, e -> {
             currentBehavior.update();
             setLocation(this.shimeji.getX(), this.shimeji.getY());
+            spriteLabel.setIcon(this.shimeji.getCurrentSprite().getIcon());
             if (currentBehavior.isFinished()) {
                 currentBehavior = getRandomBehavior();
             }

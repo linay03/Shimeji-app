@@ -1,16 +1,18 @@
 package models;
 
+import javax.swing.*;
 import java.util.Map;
 
 public class Shimeji {
 
-    public String name;
-    public Map<AnimationState, String> spritePaths;
-    public int size;
-    public int x;
-    public int y;
-    public int velocityX;
-    public int velocityY;
+    private String name;
+    private Map<AnimationState, String> spritePaths;
+    private int size;
+    private int x;
+    private int y;
+    private int velocityX;
+    private int velocityY;
+    private JLabel currentSprite;
 
     public Shimeji (String name, Map<AnimationState, String> spritePaths, int size, int x, int y, int velocityX, int velocityY) {
         this.name = name;
@@ -50,6 +52,14 @@ public class Shimeji {
         return velocityY;
     }
 
+    public Map<AnimationState, String> getSpritePathsMap() {
+        return spritePaths;
+    }
+
+    public JLabel getCurrentSprite() { return currentSprite; }
+
+    public void setCurrentSprite(JLabel currentSprite) { this.currentSprite = currentSprite; }
+
     public void setX(int x) {
         this.x = x;
     }
@@ -58,23 +68,4 @@ public class Shimeji {
         this.y = y;
     }
 
-    public void setVelocityY(int velocityY) {
-        this.velocityY = velocityY;
-    }
-
-    public void setVelocityX(int velocityX) {
-        this.velocityX = velocityX;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public void setSpritePaths(Map<AnimationState, String> spritePaths) {
-        this.spritePaths = spritePaths;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
