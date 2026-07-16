@@ -3,7 +3,7 @@
 Personal project currently under development.
 
 A desktop application inspired by Shimeji that displays an interactive character on the desktop.
-Currently available on Windows.
+Currently available on Windows, with Linux support planned.
 
 ### Current features
 
