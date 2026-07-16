@@ -22,7 +22,7 @@ public class ShimejiWindow extends JWindow {
         setSize(this.shimeji.getSize(), this.shimeji.getSize());
         setLocation(500, 500);
         ImageIcon icon = new ImageIcon(this.shimeji.getSpritePaths().get(AnimationState.IDLE));
-        Image scaled = icon.getImage().getScaledInstance(128, 128, Image.SCALE_SMOOTH);
+        Image scaled = icon.getImage().getScaledInstance(83, 200, Image.SCALE_SMOOTH);
         spriteLabel = new JLabel(new ImageIcon(scaled));
         add(spriteLabel);
 

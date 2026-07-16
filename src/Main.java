@@ -10,9 +10,9 @@ void main() {
 
     Map<AnimationState, String> spritePaths = new HashMap<>();
 
-    spritePaths.put(AnimationState.IDLE, "assets/shimeji1.png");
+    spritePaths.put(AnimationState.IDLE, "assets/shimeji-idle-right.png");
 
-    Shimeji shimeji = new Shimeji("Shimeji test", spritePaths,128, 500, 500, 2, 0);
+    Shimeji shimeji = new Shimeji("Shimeji test", spritePaths,360, 500, 500, 2, 0);
     SwingUtilities.invokeLater(() -> {
         ShimejiWindow window = new ShimejiWindow(shimeji);
         window.setVisible(true);

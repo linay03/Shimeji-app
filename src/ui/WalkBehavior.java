@@ -22,7 +22,7 @@ public class WalkBehavior extends Behavior{
 
     @Override
     public boolean isFinished() {
-        return steps > 50;
+        return steps > 20;
     }
 
     @Override

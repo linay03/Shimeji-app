@@ -6,6 +6,10 @@ public class IdleBehavior extends Behavior{
 
     public IdleBehavior(Shimeji shimeji) {
         super(shimeji);
+    }
+
+    public IdleBehavior(Shimeji shimeji, Boolean isInit) {
+        super(shimeji);
         initIdle();
     }
 
