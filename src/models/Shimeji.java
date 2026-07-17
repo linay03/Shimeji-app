@@ -10,18 +10,18 @@ public class Shimeji {
     private int size;
     private int x;
     private int y;
-    private int velocityX;
-    private int velocityY;
+    private double velocityX = 40.0;
+    private double velocityY = 0.0;
+    private double deltaTime;
     private JLabel currentSprite;
+    private boolean isDragging = false;
 
-    public Shimeji (String name, Map<AnimationState, String> spritePaths, int size, int x, int y, int velocityX, int velocityY) {
+    public Shimeji (String name, Map<AnimationState, String> spritePaths, int size, int x, int y) {
         this.name = name;
         this.spritePaths = spritePaths;
         this.size = size;
         this.x = x;
         this.y = y;
-        this.velocityX = velocityX;
-        this.velocityY = velocityY;
     }
 
     public String getName() {
@@ -44,12 +44,16 @@ public class Shimeji {
         return y;
     }
 
-    public int getVelocityX() {
+    public double getVelocityX() {
         return velocityX;
     }
 
-    public int getVelocityY() {
+    public double getVelocityY() {
         return velocityY;
+    }
+
+    public  double getDeltaTime() {
+        return deltaTime;
     }
 
     public Map<AnimationState, String> getSpritePathsMap() {
@@ -66,6 +70,18 @@ public class Shimeji {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public void setDeltaTime(double deltaTime) {
+        this.deltaTime = deltaTime;
+    }
+
+    public boolean isDragging() {
+        return isDragging;
+    }
+
+    public void setDragging(boolean dragging) {
+        isDragging = dragging;
     }
 
 }

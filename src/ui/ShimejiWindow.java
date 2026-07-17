@@ -9,6 +9,7 @@ import java.awt.*;
 public class ShimejiWindow extends JWindow {
     private JLabel spriteLabel;
     private final Shimeji shimeji;
+    private double lastUpdateTime;
     private Behavior currentBehavior;
 
     public ShimejiWindow(Shimeji shimeji) {
@@ -26,10 +27,19 @@ public class ShimejiWindow extends JWindow {
         spriteLabel = new JLabel(new ImageIcon(scaled));
         add(spriteLabel);
 
-        WalkBehavior walkBehavior = new WalkBehavior(this.shimeji, 16);
+        lastUpdateTime = System.currentTimeMillis();
+
+        WalkBehavior walkBehavior = new WalkBehavior(this.shimeji);
         currentBehavior = walkBehavior;
 
         Timer timer = new Timer(300, e -> {
+
+            long now = System.currentTimeMillis();
+            double deltaTime = (now - lastUpdateTime) / 1000.0;
+            lastUpdateTime = now;
+
+            shimeji.setDeltaTime(deltaTime);
+
             currentBehavior.update();
             setLocation(this.shimeji.getX(), this.shimeji.getY());
             spriteLabel.setIcon(this.shimeji.getCurrentSprite().getIcon());
@@ -47,5 +57,9 @@ public class ShimejiWindow extends JWindow {
 
     public Behavior getRandomBehavior() {
         return new IdleBehavior(this.shimeji);
+    }
+
+    public Shimeji getShimeji() {
+        return this.shimeji;
     }
 }

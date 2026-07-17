@@ -16,7 +16,7 @@ void main() {
     spritePaths.put(AnimationState.WALK_RIGHT1, "assets/walk/shimeji-walk1-right.png");
     spritePaths.put(AnimationState.WALK_RIGHT2, "assets/walk/shimeji-walk2-right.png");
 
-    Shimeji shimeji = new Shimeji("Shimeji test", spritePaths,360, 500, 500, 2, 0);
+    Shimeji shimeji = new Shimeji("Shimeji test", spritePaths,360, 500, 500);
     SwingUtilities.invokeLater(() -> {
         ShimejiWindow window = new ShimejiWindow(shimeji);
         window.setVisible(true);

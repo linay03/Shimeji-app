@@ -9,36 +9,31 @@ import java.awt.*;
 public class WalkBehavior extends Behavior{
 
     private int steps = 0;
-    private int deltaTime;
     private int animationChangeFrame = 0;
-    private final int animationSpeed = 2;
+    private final int animationSpeed = 1;
 
-    public WalkBehavior(Shimeji shimeji, int deltaTime) {
+    public WalkBehavior(Shimeji shimeji) {
         super(shimeji);
-        this.deltaTime = deltaTime;
-    }
-
-    public int getDeltaX (int x) {
-         return x * this.deltaTime / 1000;
-    }
-
-    public int getDeltaY (int x) {
-        return x * this.deltaTime / 1000;
     }
 
     @Override
     public boolean isFinished() {
-        return steps > 20;
+        return steps > 40;
     }
 
     @Override
     public void update() {
+
+        if (shimeji.isDragging()){
+            return;
+        }
+
         this.shimeji.setX(
-                this.shimeji.getX() + this.shimeji.getVelocityX() * getDeltaX(this.shimeji.getX())
+                (int) (this.shimeji.getX() + this.shimeji.getVelocityX() * shimeji.getDeltaTime())
         );
 
         this.shimeji.setY(
-                this.shimeji.getY() + this.shimeji.getVelocityY() * getDeltaY(this.shimeji.getY())
+                (int) (this.shimeji.getY() + this.shimeji.getVelocityY() * shimeji.getDeltaTime())
         );
 
         // Frame change by steps
