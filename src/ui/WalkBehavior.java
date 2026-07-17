@@ -37,15 +37,13 @@ public class WalkBehavior extends Behavior{
         );
 
         // Frame change by steps
-        if (steps % animationSpeed == 0) {
-            animationChangeFrame++;
+        animationChangeFrame++;
 
-            if (animationChangeFrame > 3) {
-                animationChangeFrame = 0;
-            }
-
-            updateSprite();
+        if (animationChangeFrame > 3) {
+            animationChangeFrame = 0;
         }
+
+        updateSprite();
 
         steps ++;
     }
