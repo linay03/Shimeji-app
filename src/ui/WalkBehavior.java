@@ -10,7 +10,6 @@ public class WalkBehavior extends Behavior{
 
     private int steps = 0;
     private int animationChangeFrame = 0;
-    private final int animationSpeed = 1;
 
     public WalkBehavior(Shimeji shimeji) {
         super(shimeji);
@@ -18,7 +17,7 @@ public class WalkBehavior extends Behavior{
 
     @Override
     public boolean isFinished() {
-        return steps > 40;
+        return steps > 60;
     }
 
     @Override
@@ -50,7 +49,7 @@ public class WalkBehavior extends Behavior{
 
     /**
      * Updates the sprite of the Shimeji based on the current direction and animation frame.
-     * Change between idle and walking sprites based on the animationChangeFrame.
+     * Change between idle and walking sprites.
      */
     private void updateSprite() {
         AnimationState state;

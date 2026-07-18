@@ -56,10 +56,6 @@ public class Shimeji {
         return deltaTime;
     }
 
-    public Map<AnimationState, String> getSpritePathsMap() {
-        return spritePaths;
-    }
-
     public JLabel getCurrentSprite() { return currentSprite; }
 
     public void setCurrentSprite(JLabel currentSprite) { this.currentSprite = currentSprite; }

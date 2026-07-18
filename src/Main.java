@@ -22,5 +22,5 @@ void main() {
         window.setVisible(true);
     });
 
-    System.out.println("Shimeji lancé !");
+    System.out.println(shimeji.getName() + " lancé !");
 }
